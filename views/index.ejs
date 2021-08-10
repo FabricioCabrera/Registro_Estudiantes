@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Registro de Estudiantes</title>
+    <!-- BOOTSTRAP 4 CDN CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
+rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
+crossorigin="anonymous">
+</head>
+
+<body style="background-color: #8ecae6;">
+    
+    <nav class="navbar navbar-dark bg-dark" >
+        <a href="/" class="navbar-brand">Registro </a>
+    </nav>
+
+    <pre>
+    </pre>
+    <div class="container"> 
+        <div class= "row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/add" method='POST'>
+                            <div class="form_group">
+                             <br>
+                                <h1 class="text-center">Registro de estudiantes</h1>
+                                <input type= "text" name="name" placeholder="Name" class="form-control"><br>
+                                <input type= "text" name="username" placeholder="UserName" class="form-control"><br>
+                                <input type= "text" name="age" placeholder="Age" class="form-control"><br>
+                                <input type= "text" name="address" placeholder="Address" class="form-control"><br>
+                                <input type= "text" name="telephone" placeholder="Telephone" class="form-control"><br>
+                                <input type= "text" name="email" placeholder="Email" class="form-control"><br>
+                            </div>
+                        
+                            <button type="submut" class="btn btn-primary btn-block">Registrar
+
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-6" >
+                <table class="table table-bordered table-hover" style="background-color: #f1faee;">
+                    <thead>
+                        <tr style="background-color: #00d647;" class="text-center">
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Edad</th>
+                            <th>Dirección</th>
+                            <th>Teléfono</th>
+                            <th>Correo</th>
+                        </tr>
+                    </thead>
+               
+                    <tbody>
+                        <% for (var i =0; i < datos.length; i++){ %>
+                            <tr style="background-color: #a9ecb2;">
+                                
+                                <td><%= datos[i].name %></td>
+                                <td><%= datos[i].username %></td>
+                                <td><%= datos[i].age %></td>
+                                <td><%= datos[i].address %></td>
+                                <td><%= datos[i].telephone %></td>
+                                <td><%= datos[i].email %></td>
+                            </tr>
+                        <%} %>
+                    </tbody>
+                </table>
+               
+            </div>
+        </div>
+        <form form action="/files" method="post" enctype="multipart/form-data"><br>
+                <input type= "file" name="avatar" id="">
+                <br><br>
+                <input type= "submit" value="Enviar">
+                
+        </form>
+
+
+    </div>
+
+    
+    
+
+</body>
+
+</html>
+</html>
